@@ -42,7 +42,7 @@
     #expiryTicker.urgent { border-color: #c24a4a; color: #ff8a7a; animation: pulse 1s infinite; }
     @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.6; } }
 
-    /* ── Maintenance modal ── */
+    /* ── Maintenance Complete popup ── */
     #maintenanceModal {
       position: fixed; inset: 0;
       background: rgba(5,7,12,0.94); backdrop-filter: blur(16px);
@@ -51,23 +51,22 @@
     }
     .maint-card {
       background: rgba(18,22,30,0.92); border-radius: 36px;
-      border: 1px solid rgba(239,68,68,0.3); padding: 40px 36px;
+      border: 1px solid rgba(45,212,191,0.3); padding: 40px 36px;
       max-width: 420px; text-align: center; animation: modalFadeIn 0.4s cubic-bezier(0.2,0.9,0.4,1.1);
     }
-    .maint-icon { font-size: 52px; margin-bottom: 16px; }
     .maint-card h2 {
       font-size: 24px; font-weight: 800;
-      background: linear-gradient(120deg, #ff8a7a, #ff4545);
+      background: linear-gradient(120deg, #2dd4bf, #7c3aed);
       background-clip: text; -webkit-background-clip: text; color: transparent;
     }
     .maint-card p { color: #b9c3e0; font-size: 14px; margin: 16px 0; line-height: 1.6; }
     .maint-btn {
       margin-top: 10px; padding: 10px 28px;
-      background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3);
-      color: #ef4444; border-radius: 30px; font-size: 13px; font-weight: 700;
-      cursor: pointer; font-family: inherit; transition: all .2s;
+      background: rgba(45,212,191,0.15); border: 1px solid rgba(45,212,191,0.3);
+      color: #2dd4bf; border-radius: 30px; font-size: 13px; font-weight: 700;
+      cursor: pointer; font-family: inherit; transition: all .2s; text-decoration: none;
     }
-    .maint-btn:hover { background: rgba(239,68,68,0.25); }
+    .maint-btn:hover { background: rgba(45,212,191,0.25); }
 
     /* ── Announcements banner ── */
     #announcementsBanner {
@@ -155,11 +154,13 @@
 </head>
 <body>
 
-<!-- Maintenance popup -->
+<!-- Redirect popup -->
 <div id="maintenanceModal">
   <div class="maint-card">
-      <h2>Under Maintenance</h2>
-      <p>GameVault is currently shut down for scheduled maintenance. We're working hard to improve your experience. Please check back later. Thank you for your patience!</p>
+      <h2>Maintenance Complete</h2>
+      <p>Maintenance is done. We've added new features, improvements, and a fully updated website.</p>
+      <p>Click below to visit the new GameVault.</p>
+      <a href="https://gamevaultcom.vercel.app/" class="maint-btn" style="display:inline-block; text-decoration:none; margin-top:16px;">VISIT NEW WEBSITE</a>
   </div>
 </div>
 
